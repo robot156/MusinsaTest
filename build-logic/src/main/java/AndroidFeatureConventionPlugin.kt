@@ -16,10 +16,9 @@ internal class AndroidFeatureConventionPlugin : Plugin<Project> {
             }
 
             dependencies {
-//                implementation(project(":core:domain"))
-//                implementation(project(":core:designsystem"))
-//                implementation(project(":core:model"))
-//                implementation(project(":core:ui"))
+                implementation(project(":core:domain"))
+                implementation(project(":core:designsystem"))
+                implementation(project(":core:model"))
 
                 // AndroidX
                 implementation(libs.androidx.core.ktx)
@@ -40,6 +39,9 @@ internal class AndroidFeatureConventionPlugin : Plugin<Project> {
                 implementation(libs.kotlin.stdlib)
                 implementation(libs.kotlinx.coroutines)
                 implementation(libs.kotlinx.collections.immutable)
+
+                // coil
+                implementation(libs.bundles.coil)
 
                 // ETC
                 implementation(libs.timber)

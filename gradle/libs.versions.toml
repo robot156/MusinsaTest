@@ -23,6 +23,9 @@ ksp = "2.0.20-1.0.24"
 # hilt
 hilt = "2.51.1"
 
+# Coil
+coil = "2.7.0"
+
 # coreDseugar
 androidDesugarJdkLibs = "2.1.2"
 
@@ -31,10 +34,6 @@ retrofit = "2.11.0"
 okhttp = "4.12.0"
 timber = "5.0.1"
 composeStableMarker = "1.0.5"
-junit = "4.13.2"
-junitVersion = "1.2.1"
-espressoCore = "3.6.1"
-material = "1.10.0"
 
 [libraries]
 # AndroidX
@@ -83,6 +82,11 @@ kotlinx-coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutin
 kotlinx-collections-immutable = { group = "org.jetbrains.kotlinx", name = "kotlinx-collections-immutable", version.ref = "kotlinxCollectionsImmutable" }
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
 
+# Coil
+coil-kt = { group = "io.coil-kt", name = "coil", version.ref = "coil" }
+coil-kt-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
+coil-kt-svg = { group = "io.coil-kt", name = "coil-svg", version.ref = "coil" }
+
 # ETC
 retrofit-core = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 retrofit-converter-kotlinx-serialization = { group = "com.squareup.retrofit2", name = "converter-kotlinx-serialization", version.ref = "retrofit" }
@@ -94,14 +98,11 @@ compose-stable-marker = { group = "com.github.skydoves", name = "compose-stable-
 # Dependencies of the included build-logic
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
 kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
-junit = { group = "junit", name = "junit", version.ref = "junit" }
-androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
-androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
 [bundles]
 androidx-lifecycle = ["androidx-lifecycle-runtime-compose", "androidx-lifecycle-viewModel-compose", "androidx-lifecycle-savedState"]
 retrofit = ["retrofit-core", "retrofit-converter-kotlinx-serialization", "okhttp-logging"]
+coil = ["coil-kt", "coil-kt-compose", "coil-kt-svg"]
 
 [plugins]
 # Android Plugin

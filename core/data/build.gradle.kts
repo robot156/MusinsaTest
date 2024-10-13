@@ -2,7 +2,6 @@ plugins {
     alias(libs.plugins.musinsa.android.library)
     alias(libs.plugins.musinsa.android.hilt)
     alias(libs.plugins.kotlin.serialization)
-    alias(libs.plugins.ksp)
 }
 
 android {

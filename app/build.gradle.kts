@@ -32,6 +32,9 @@ dependencies {
     implementation(libs.kotlin.stdlib)
     implementation(libs.kotlinx.coroutines)
 
+    // Coil
+    implementation(libs.bundles.coil)
+
     // Log tracker
     implementation(libs.timber)
 }

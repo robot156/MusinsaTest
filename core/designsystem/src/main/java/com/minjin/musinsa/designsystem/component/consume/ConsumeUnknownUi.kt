@@ -16,6 +16,8 @@ import com.minjin.musinsa.designsystem.R
 import com.minjin.musinsa.model.state.UiAction
 import com.minjin.musinsa.model.state.UnknownUiAction
 
+private const val appStore = "https://play.google.com/store/apps/details?id=com.musinsa.store&hl=ko"
+
 @Composable
 fun ConsumeUnknownUi(
     modifier: Modifier = Modifier,
@@ -27,7 +29,7 @@ fun ConsumeUnknownUi(
             containerColor = MaterialTheme.colorScheme.onSurface,
             contentColor = MaterialTheme.colorScheme.surface,
         ),
-        onClick = { onUiAction(UnknownUiAction.OnClickPlayStore) }
+        onClick = { onUiAction(UnknownUiAction.OnClickPlayStore(appStore)) }
     ) {
         Text(
             modifier = Modifier

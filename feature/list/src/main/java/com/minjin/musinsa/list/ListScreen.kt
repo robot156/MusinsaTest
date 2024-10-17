@@ -1,5 +1,8 @@
 package com.minjin.musinsa.list
 
+import android.content.Intent
+import android.net.Uri
+import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.fillMaxSize
@@ -11,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.minjin.musinsa.designsystem.component.common.ErrorScreen
@@ -18,6 +22,7 @@ import com.minjin.musinsa.designsystem.component.common.LoadingScreen
 import com.minjin.musinsa.designsystem.component.consume.ConsumeContentUi
 import com.minjin.musinsa.designsystem.component.consume.ConsumeFooterUi
 import com.minjin.musinsa.designsystem.component.consume.ConsumeHeaderUi
+import com.minjin.musinsa.designsystem.util.ObserveAsEvents
 import com.minjin.musinsa.model.component.UiContainer
 import com.minjin.musinsa.model.state.UiAction
 
@@ -25,7 +30,21 @@ import com.minjin.musinsa.model.state.UiAction
 internal fun ListScreenRoute(
     viewModel: ListViewModel = hiltViewModel()
 ) {
+    val context = LocalContext.current
     val listUiState by viewModel.listUiState.collectAsStateWithLifecycle()
+
+    ObserveAsEvents(flow = viewModel.listUiEvent) { event ->
+        when (event) {
+            is ListUiEvent.NavigateToWebSite -> {
+                try {
+                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(event.linkUrl))
+                    context.startActivity(intent)
+                } catch (e: Exception) {
+                    Toast.makeText(context, e.message, Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+    }
 
     when (val uiState = listUiState) {
         is ListUiState.Loading -> LoadingScreen()
@@ -59,6 +78,7 @@ private fun ListContainer(
         ) { uiConsume ->
             uiConsume.uiHeader?.let { uiHeader ->
                 ConsumeHeaderUi(
+                    modifier = Modifier.animateItem(),
                     uiHeader = uiHeader,
                     onUiAction = onUiAction
                 )
@@ -66,6 +86,7 @@ private fun ListContainer(
 
             uiConsume.uiContent?.let { uiContent ->
                 ConsumeContentUi(
+                    modifier = Modifier.animateItem(),
                     uiContent = uiContent,
                     onUiAction = onUiAction
                 )
@@ -73,6 +94,8 @@ private fun ListContainer(
 
             uiConsume.uiFooter?.let { uiFooter ->
                 ConsumeFooterUi(
+                    modifier = Modifier.animateItem(),
+                    uuid = uiConsume.uuid,
                     uiFooter = uiFooter,
                     onUiAction = onUiAction
                 )

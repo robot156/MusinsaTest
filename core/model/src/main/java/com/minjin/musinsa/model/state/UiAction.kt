@@ -11,12 +11,12 @@ sealed interface ContentUiAction : UiAction {
 }
 
 sealed interface FooterUiAction : UiAction {
-    data object OnClickRefresh : FooterUiAction
-    data object OnClickMore : FooterUiAction
+    data class OnClickRefresh(val uuid: String) : FooterUiAction
+    data class OnClickMore(val uuid: String) : FooterUiAction
 }
 
 sealed interface UnknownUiAction : UiAction {
-    data object OnClickPlayStore : UnknownUiAction
+    data class OnClickPlayStore(val url: String) : UnknownUiAction
 }
 
 sealed interface ErrorUiAction : UiAction {

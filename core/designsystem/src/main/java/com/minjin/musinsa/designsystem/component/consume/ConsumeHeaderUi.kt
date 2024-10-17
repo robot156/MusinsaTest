@@ -52,7 +52,7 @@ fun ConsumeHeaderUi(
             }
         },
         actions = {
-            if (uiHeader.linkUrl != null) {
+            if (uiHeader.linkUrl.isNullOrEmpty().not()) {
                 TextButton(
                     colors = ButtonDefaults
                         .textButtonColors()

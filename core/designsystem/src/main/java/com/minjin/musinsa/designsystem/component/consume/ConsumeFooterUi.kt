@@ -21,24 +21,28 @@ import com.minjin.musinsa.model.state.UiAction
 
 @Composable
 fun ConsumeFooterUi(
+    modifier: Modifier = Modifier,
+    uuid : String = "",
     uiFooter: UiFooter,
     onUiAction: (UiAction) -> Unit = {},
 ) {
     when (uiFooter) {
         is UiFooter.Refresh -> ConsumeRefreshFooterUi(
-            modifier = Modifier.padding(horizontal = 4.dp, vertical = 24.dp),
+            modifier = modifier.padding(horizontal = 4.dp, vertical = 24.dp),
+            uuid = uuid,
             uiFooter = uiFooter,
             onUiAction = onUiAction
         )
 
         is UiFooter.More -> ConsumeMoreFooterUi(
-            modifier = Modifier.padding(horizontal = 4.dp, vertical = 24.dp),
+            modifier = modifier.padding(horizontal = 4.dp, vertical = 24.dp),
+            uuid = uuid,
             uiFooter = uiFooter,
             onUiAction = onUiAction
         )
 
         is UiFooter.UnknownFooter -> ConsumeUnknownUi(
-            modifier = Modifier.padding(horizontal = 12.dp),
+            modifier = modifier.padding(horizontal = 12.dp),
             onUiAction = onUiAction
         )
     }
@@ -47,6 +51,7 @@ fun ConsumeFooterUi(
 @Composable
 private fun ConsumeRefreshFooterUi(
     modifier: Modifier = Modifier,
+    uuid : String = "",
     uiFooter: UiFooter.Refresh,
     onUiAction: (UiAction) -> Unit = {},
 ) {
@@ -54,7 +59,7 @@ private fun ConsumeRefreshFooterUi(
         modifier = modifier
     ) {
         FooterButton(
-            onClick = { onUiAction(FooterUiAction.OnClickRefresh) }
+            onClick = { onUiAction(FooterUiAction.OnClickRefresh(uuid)) }
         ) {
             NetworkImage(imageUrl = uiFooter.iconUrl)
 
@@ -72,6 +77,7 @@ private fun ConsumeRefreshFooterUi(
 @Composable
 private fun ConsumeMoreFooterUi(
     modifier: Modifier = Modifier,
+    uuid : String = "",
     uiFooter: UiFooter.More,
     onUiAction: (UiAction) -> Unit = {},
 ) {
@@ -79,7 +85,7 @@ private fun ConsumeMoreFooterUi(
         modifier = modifier
     ) {
         FooterButton(
-            onClick = { onUiAction(FooterUiAction.OnClickMore) }
+            onClick = { onUiAction(FooterUiAction.OnClickMore(uuid)) }
         ) {
             Text(
                 modifier = Modifier.padding(vertical = 6.dp),

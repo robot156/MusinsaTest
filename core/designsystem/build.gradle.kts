@@ -8,6 +8,8 @@ android {
 }
 
 dependencies {
+    implementation(projects.core.model)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.compose.foundation)
     implementation(libs.androidx.compose.foundation.layout)
@@ -15,6 +17,9 @@ dependencies {
     implementation(libs.androidx.compose.runtime)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.ui.util)
+
+    implementation(libs.kotlinx.collections.immutable)
+    implementation(libs.bundles.coil)
     implementation(libs.timber)
 
     api(libs.androidx.compose.ui.tooling)

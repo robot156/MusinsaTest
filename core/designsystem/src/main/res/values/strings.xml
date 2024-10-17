@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Common -->
+    <string name="common_all">전체</string>
+    <string name="common_error">연결 실패</string>
+    <string name="common_error_description">서버와의 연결이 불안정합니다\n잠시 후 다시 시도해주세요</string>
+    <string name="common_refresh">새로고침</string>
+    <string name="common_unknown_ui">현재 버전에서 제공이 불가능한 화면입니다.\n최신 버전으로 업데이트 해주세요.</string>
+
+    <!-- Content -->
+    <string name="goods_coupon">쿠폰</string>
+
+    <!-- Util -->
+    <string name="decimal_format_not_digit">###,###</string>
+    <string name="unit_won">원</string>
+</resources>

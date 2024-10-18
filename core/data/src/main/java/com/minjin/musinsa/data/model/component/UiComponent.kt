@@ -8,6 +8,8 @@ import com.minjin.musinsa.data.model.component.header.HeaderType
 import com.minjin.musinsa.data.model.component.header.asEntity
 import com.minjin.musinsa.domain.entity.component.UiComponentEntity
 import com.minjin.musinsa.domain.entity.component.UiContainerEntity
+import com.minjin.musinsa.domain.entity.component.content.ContentEntity
+import com.minjin.musinsa.domain.entity.component.footer.FooterEntity
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -27,14 +29,14 @@ internal data class UiComponents(
     val footerType: UiType? = null,
 )
 
-internal fun UiContainer.asEntity() : UiContainerEntity {
+internal fun UiContainer.asEntity(): UiContainerEntity {
     return UiContainerEntity(components = uiComponents.map(UiComponents::asEntity))
 }
 
 internal fun UiComponents.asEntity(): UiComponentEntity {
     return UiComponentEntity(
         header = headerType?.asEntity(),
-        content = (contentType as? ContentType)?.asEntity(),
-        footer = (footerType as? FooterType)?.asEntity()
+        content = if (contentType is UnknownTypeContent) ContentEntity.UnknownContent else (contentType as? ContentType)?.asEntity(),
+        footer = if (footerType is UnknownTypeContent) FooterEntity.UnknownFooterEntity else (footerType as? FooterType)?.asEntity()
     )
 }

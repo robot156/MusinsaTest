@@ -136,15 +136,15 @@ class ListViewModel @Inject constructor(
         }
     }
 
-    private fun onRefresh() {
-        viewModelScope.launch {
-            refreshSignal.emit(Unit)
-        }
-    }
-
     private fun setListUiEvent(uiEvent: ListUiEvent) {
         viewModelScope.launch {
             _listUiEvent.emit(uiEvent)
+        }
+    }
+
+    private fun onRefresh() {
+        viewModelScope.launch {
+            refreshSignal.emit(Unit)
         }
     }
 

@@ -1,7 +1,9 @@
 package com.minjin.musinsa.model.product
 
+import androidx.compose.runtime.Stable
 import com.minjin.musinsa.domain.entity.product.BannerEntity
 
+@Stable
 data class Banner(
     val linkUrl: String,
     val thumbnailUrl: String,

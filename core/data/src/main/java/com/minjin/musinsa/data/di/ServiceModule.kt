@@ -70,14 +70,15 @@ internal object ServiceModule {
     fun provideJson(): Json {
         val module = SerializersModule {
             polymorphic(UiType::class) {
+                // content
                 subclass(ContentType.GridTypeContent::class, ContentType.GridTypeContent.serializer())
                 subclass(ContentType.BannerTypeContent::class, ContentType.BannerTypeContent.serializer())
                 subclass(ContentType.ScrollTypeContent::class, ContentType.ScrollTypeContent.serializer())
                 subclass(ContentType.StyleTypeContent::class, ContentType.StyleTypeContent.serializer())
-
+                // footer
                 subclass(FooterType.MoreTypeFooter::class, FooterType.MoreTypeFooter.serializer())
                 subclass(FooterType.RefreshTypeFooter::class, FooterType.RefreshTypeFooter.serializer())
-
+                // default
                 defaultDeserializer { UnknownTypeContent.serializer() }
             }
         }

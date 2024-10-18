@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -91,12 +92,13 @@ fun ConsumeContentBannerUi(
         Row(
             modifier = Modifier
                 .background(Color.Black.copy(alpha = 0.5f))
-                .align(Alignment.BottomEnd),
+                .align(Alignment.BottomEnd)
+                .widthIn(min = 70.dp)
+                .padding(vertical = 4.dp, horizontal = 14.dp),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Center
         ) {
             Text(
-                modifier = Modifier.padding(4.dp),
                 text = "${(pagerState.currentPage % pageSize) + 1} / $pageSize",
                 style = MaterialTheme.typography.labelSmall,
                 color = Color.White

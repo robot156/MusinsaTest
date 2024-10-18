@@ -12,16 +12,16 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/Theme.MusinsaTest"
-        tools:ignore="DiscouragedApi"
         tools:targetApi="31">
 
         <activity
             android:name=".main.MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.MusinsaTest">
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MusinsaTest"
+            tools:ignore="DiscouragedApi">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

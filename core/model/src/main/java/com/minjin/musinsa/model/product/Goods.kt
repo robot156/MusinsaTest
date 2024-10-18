@@ -1,7 +1,9 @@
 package com.minjin.musinsa.model.product
 
+import androidx.compose.runtime.Stable
 import com.minjin.musinsa.domain.entity.product.GoodsEntity
 
+@Stable
 data class Goods(
     val linkUrl: String,
     val thumbnailUrl: String,

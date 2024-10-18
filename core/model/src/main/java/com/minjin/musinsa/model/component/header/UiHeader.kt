@@ -13,8 +13,8 @@ data class UiHeader(
 
 fun HeaderEntity.asItem(): UiHeader {
     return UiHeader(
-        title,
-        iconUrl,
-        linkUrl
+        title = title,
+        iconUrl = iconUrl,
+        linkUrl = linkUrl
     )
 }

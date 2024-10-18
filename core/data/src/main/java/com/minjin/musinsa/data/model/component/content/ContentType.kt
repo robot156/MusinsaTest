@@ -46,12 +46,11 @@ internal sealed class ContentType : UiType() {
 }
 
 
-internal fun ContentType?.asEntity(): ContentEntity {
+internal fun ContentType.asEntity(): ContentEntity {
     return when (this) {
         is ContentType.BannerTypeContent -> ContentEntity.BannerTypeContentEntity(banners.map(Banner::asEntity))
         is ContentType.GridTypeContent -> ContentEntity.GridTypeContent(goods.map(Goods::asEntity))
         is ContentType.ScrollTypeContent -> ContentEntity.ScrollTypeContent(goods.map(Goods::asEntity))
         is ContentType.StyleTypeContent -> ContentEntity.StyleTypeContent(styles.map(Style::asEntity))
-        else -> ContentEntity.UnknownContent
     }
 }

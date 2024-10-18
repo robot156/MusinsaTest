@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -43,7 +44,7 @@ fun ErrorScreen(
         )
 
         Button(
-            colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.secondary),
+            colors = ButtonDefaults.buttonColors(containerColor = Color.Black),
             onClick = { onUiAction(ErrorUiAction.OnClickRefresh) }
         ) {
             Text(

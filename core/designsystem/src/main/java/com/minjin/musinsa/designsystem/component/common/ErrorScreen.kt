@@ -33,11 +33,13 @@ fun ErrorScreen(
     ) {
         Text(
             text = stringResource(id = R.string.common_error),
+            color = MaterialTheme.colorScheme.onSurface
         )
 
         Text(
             text = stringResource(id = R.string.common_error_description),
-            textAlign = TextAlign.Center
+            textAlign = TextAlign.Center,
+            color = MaterialTheme.colorScheme.onSurface
         )
 
         Button(

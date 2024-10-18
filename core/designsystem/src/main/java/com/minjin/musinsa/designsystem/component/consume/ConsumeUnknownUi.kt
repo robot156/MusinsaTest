@@ -24,7 +24,9 @@ fun ConsumeUnknownUi(
     onUiAction: (UiAction) -> Unit = {}
 ) {
     Card(
-        modifier = modifier.fillMaxWidth(),
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(vertical = 24.dp),
         colors = CardDefaults.cardColors(
             containerColor = MaterialTheme.colorScheme.onSurface,
             contentColor = MaterialTheme.colorScheme.surface,
@@ -37,7 +39,7 @@ fun ConsumeUnknownUi(
                 .padding(12.dp),
             text = stringResource(R.string.common_unknown_ui),
             style = MaterialTheme.typography.labelLarge,
-            textAlign = TextAlign.Center
+            textAlign = TextAlign.Center,
         )
     }
 }

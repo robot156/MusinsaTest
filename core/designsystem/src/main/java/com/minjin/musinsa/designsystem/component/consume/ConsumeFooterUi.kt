@@ -61,14 +61,16 @@ private fun ConsumeRefreshFooterUi(
         FooterButton(
             onClick = { onUiAction(FooterUiAction.OnClickRefresh(uuid)) }
         ) {
-            NetworkImage(imageUrl = uiFooter.iconUrl)
+            NetworkImage(
+                imageUrl = uiFooter.iconUrl
+            )
 
             Spacer(Modifier.width(4.dp))
 
             Text(
                 modifier = Modifier.padding(vertical = 6.dp),
                 text = uiFooter.title,
-                style = MaterialTheme.typography.labelLarge.copy(fontWeight = FontWeight.Bold)
+                style = MaterialTheme.typography.labelLarge.copy(fontWeight = FontWeight.Bold),
             )
         }
     }

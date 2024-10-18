@@ -33,7 +33,10 @@ fun ConsumeHeaderUi(
 ) {
     TopAppBar(
         modifier = modifier.fillMaxWidth(),
-        colors = TopAppBarDefaults.topAppBarColors(containerColor = MaterialTheme.colorScheme.background),
+        colors = TopAppBarDefaults.topAppBarColors(
+            containerColor = MaterialTheme.colorScheme.background,
+            titleContentColor = MaterialTheme.colorScheme.onSurface,
+        ),
         title = {
             Row(
                 verticalAlignment = Alignment.CenterVertically

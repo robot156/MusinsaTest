@@ -63,6 +63,7 @@ fun ContentGoodsItem(
         Text(
             text = goods.brandName,
             style = MaterialTheme.typography.labelSmall,
+            color = MaterialTheme.colorScheme.onSurface
         )
 
         Row(
@@ -74,6 +75,7 @@ fun ContentGoodsItem(
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
                 style = MaterialTheme.typography.labelLarge.copy(fontWeight = FontWeight.Bold),
+                color = MaterialTheme.colorScheme.onSurface
             )
 
             Spacer(Modifier.weight(1f))

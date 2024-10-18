@@ -9,7 +9,8 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Density
 
 private val LightColorScheme = lightColorScheme(
-    background = Color.White
+    background = Color.White,
+    onSurface = Color(0xFF1A1A1A),
 )
 
 @Composable

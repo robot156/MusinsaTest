@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -19,6 +18,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.minjin.musinsa.designsystem.component.AutoScrollablePager
 import com.minjin.musinsa.designsystem.image.NetworkImage
 import com.minjin.musinsa.designsystem.modifier.onClick
 import com.minjin.musinsa.model.component.content.UiContent
@@ -39,9 +39,10 @@ fun ConsumeContentBannerUi(
             onUiAction(ContentUiAction.OnClickUrl(uiContent.banners[pagerState.currentPage % pageSize].linkUrl))
         }
     ) {
-        HorizontalPager(
+        AutoScrollablePager(
             modifier = Modifier.fillMaxSize(),
-            state = pagerState,
+            pagerState = pagerState,
+            itemCount = pageSize,
         ) { page ->
             val banner = uiContent.banners[page % pageSize]
 

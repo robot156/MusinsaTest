@@ -8,20 +8,19 @@ androidxComposeBom = "2024.09.02"
 androidxStartUp = "1.2.0"
 androidxLifecycle = "2.8.6"
 androidxHilt = "1.2.0"
-androidxComposeCompiler = "1.5.15"
-androidxActivity = "1.9.2"
-androidxNavigation = "2.8.1"
+androidxActivity = "1.9.3"
+androidxNavigation = "2.8.3"
 androidxAppcompat = "1.7.0"
 
 # Kotlin
 kotlin = "2.0.20"
-kotlinxCoroutines = "1.8.1"
-kotlinxCollectionsImmutable = "0.3.7"
+kotlinxCoroutines = "1.9.0"
+kotlinxCollectionsImmutable = "0.3.8"
 kotlinxSerializationJson = "1.7.1"
-ksp = "2.0.20-1.0.24"
+ksp = "2.0.20-1.0.25"
 
 # hilt
-hilt = "2.51.1"
+hilt = "2.52"
 
 # Coil
 coil = "2.7.0"
@@ -78,6 +77,7 @@ android-desugarJdkLibs = { group = "com.android.tools", name = "desugar_jdk_libs
 
 # kotlin
 kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib-jdk8", version.ref = "kotlin" }
+kotlin-compose-compiler-extension = { group = "org.jetbrains.kotlin", name = "compose-compiler-gradle-plugin", version.ref = "kotlin" }
 kotlinx-coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinxCoroutines" }
 kotlinx-collections-immutable = { group = "org.jetbrains.kotlinx", name = "kotlinx-collections-immutable", version.ref = "kotlinxCollectionsImmutable" }
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
